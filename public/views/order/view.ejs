@@ -8,14 +8,15 @@
     <title>Home | eLoundry</title>
     
     <!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
           
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="/images/favicon.ico">
     
 </head><!--/head-->
 <body>
@@ -57,7 +58,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
@@ -86,7 +87,7 @@
                     <li class="active"><a href="#">My Account</a></li>
                     <li><a id="profile" href="#">Profile</a></li>
                     <li><a  id="mypackage" href="#">My Package</a></li>
-                    <li ><a id="pickuprequest" href="#">Pickup Request</a></li>
+                    
                     <li><a id="orderinfo" href="#">Order Information</a></li>
                     
                     <li><a href="index.html">Logout</a></li>
@@ -97,22 +98,31 @@
             <table class="table table-bordered table-condensed">
                 <thead>
                     <tr>
-                        <th>#</th>
+                       
+                        <th>Order Name</th>
+                    
+                        <th>Contact No</th>
+                        <th>Address</th>
+                        <th>Area</th>
                         <th>Order Date</th>
-                        <th>Order No</th>
-                        <th>Pickup</th>
-                        <th>Type</th>
-                        <th>Delivery</th>
-                        <th>Package</th>
+                        <th>Order Time</th>
+                        <th>Package</th> 
                         <th>Amount</th>
-                        <th>Reward</th>
-                        <th>Payable</th>
-                        <th>Status</th>
+                        
                     </tr>                   
                 </thead>
-                <tbody>
-                </tbody>
+                     <tr>
+                        <td><%= request.order.name %></td>
+                        <td><%= request.order.contactno %></td>
+                        <td><%= request.order.address %></td>
+                        <td><%= request.order.area %></td>
+                        <td><%= request.order.pickupDate %></td>
+                        <td><%= request.order.pickupTime %></td>
+                        <td><%= request.order.purchagePackage.name%></td>
+                        <td><%= request.order.purchagePackage.price%></td>
+                      </tr>
             </table>
+            
         </div>
 
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="pr">
@@ -131,25 +141,25 @@
                 <div class="form-group">
                     <label for="CustName" class="col-sm-3 control-label">Name</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="CustName" name="CustName" value="Hasan md. imran" placeholder="Full Name">
+                        <input type="text" class="form-control" id="CustName" name="CustName" value=<%=request.order.name%> placeholder="Full Name">
                     </div>
                 </div>              
                 <div class="form-group">
                     <label for="CustMobile" class="col-sm-3 control-label">Contact No</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="CustMobile" name="CustMobile" value="01973889873" placeholder="Contact No">
+                        <input type="text" class="form-control" id="CustMobile" name="CustMobile" value=<%=request.order.contactno%> placeholder="Contact No">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="CustAddress" class="col-sm-3 control-label">Address</label>
                     <div class="col-sm-6">
-                        <textarea class="form-control" name="CustAddress" id="CustAddress" placeholder="Address">block-B</textarea>
+                        <textarea class="form-control" name="CustAddress" id="CustAddress" value=<%=request.order.contactno%> placeholder="Address">block-B</textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="CustArea" class="col-sm-3 control-label">Area</label>
                     <div class="col-sm-6">
-                        <select class="form-control" name="CustArea" id="CustArea">
+                        <select class="form-control" name="CustArea"  value=<%=request.order.area%> id="CustArea">
                             <option value="">Select Area</option>
                             <option value="2">Gulshan</option><option value="3">Banani</option><option value="4">Uttara</option><option value="6">Bashundhara</option><option value="7">Baridhara</option><option value="8">Khilkhet/Nikunjo</option>                                           
                         </select>
@@ -195,15 +205,14 @@
             <table class="table table-bordered table-condensed">
                 <tbody>
                     <tr>
-                        <th rowspan="2">#</th>
+                        
                         <th rowspan="2" class="text-center">Date</th>
-                        <th rowspan="2" class="text-center">Invoice</th>
-                        <th rowspan="2" class="text-center">Package &amp; Coupon</th>                                                                           
+                        
+                        <th rowspan="2" class="text-center">Package</th>                                                                           
                         <th colspan="3" class="text-center">Qty</th>
                         <th rowspan="2" class="text-center">Price</th>
                         <th rowspan="2" class="text-center">Paid</th>       
-                        <th rowspan="2" class="text-center">Expiry</th>
-                        <th rowspan="2" class="text-center">Status</th>
+                        
                     </tr>
                     <tr>
                         <th class="text-center">Limit</th>
@@ -213,23 +222,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="pickup">
-            <h4 class="headline">Pickup Request</h4>
-            <table class="table table-bordered table-condensed">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Issue Date</th>
-                        <th>Pickup No</th>
-                        <th>Pickup Date</th>
-                        <th>Time</th>
-                        <th>Status</th>
-                    </tr>                   
-                </thead>
-            
-            </table>
-        </div>
-
+        
 
 </div>
     </div>
@@ -254,49 +247,12 @@
                     </div>    
                 </div><!--/.col-md-3-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Support</h3>
-                        <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Refund policy</a></li>
-                            <li><a href="#">Ticket system</a></li>
-                            <li><a href="#">Billing system</a></li>
-                        </ul>
-                    </div>    
+                 
                 </div><!--/.col-md-3-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Developers</h3>
-                        <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Email Marketing</a></li>
-                            <li><a href="#">Plugin Development</a></li>
-                            <li><a href="#">Article Writing</a></li>
-                        </ul>
-                    </div>    
                 </div><!--/.col-md-3-->
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="widget">
-                        <h3>Our Partners</h3>
-                        <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>
-                            <li><a href="#">Exercitation</a></li>
-                            <li><a href="#">Ullamco</a></li>
-                            <li><a href="#">Laboris</a></li>
-                        </ul>
-                    </div>    
+                 
                 </div><!--/.col-md-3-->
             </div>
         </div>
@@ -320,12 +276,15 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/wow.min.js"></script>
-     <script src="js/customer.js"></script>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+
+  <script src="/vendor/ejs_production.js"></script>
+   
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/wow.min.js"></script>
+     <script src="/js/customer.js"></script>
 </body>
 </html>

@@ -19,7 +19,6 @@ var OrderSchema = {
 
   contactno: {
     type: Number,
-    //ref: 'User'
      required: 'contactno required'
   },
   address:{
@@ -37,17 +36,34 @@ var OrderSchema = {
   pickupDate:{
     type:Date,
     default:Date.now,
+    
     required:'pickupDate required'
   },
   pickupTime:{
-    type:Date,
-    default:Date.now,
+    type:String,
+    default:'',
     required:'pickupTime required'
 
+  },
+  purchagePackage:{
+    name:{
+      type: String
+    },
+    price:{
+      type:Number
+    },
+    duration:{
+      type:String
+    },
+    quantity: {
+     type: Number
+   }
+    
   },
   socialNotes:{
     type:String,
   },
+  
   items:[{
    service:{
       type: Schema.ObjectId,

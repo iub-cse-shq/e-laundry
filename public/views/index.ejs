@@ -63,15 +63,15 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="how-it-works.html">How it works</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="package.html">Package</a></li>
-                        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                        <li class="active"><a href="/index">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/service">Services</a></li>
+                        <li><a href="/howitworks">How it works</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/package">Package</a></li>
+                        <li><a href="/whychooseus">Why Choose Us</a></li>
                         <li><a data-target="#login-registration" data-toggle="modal" href="#">Login/Registration</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                         
+                        <li><a href="/contact">Contact</a></li>                         
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -632,14 +632,14 @@
             <div class="row">
                 <h6 class="section-title">Our Package</h6>
                 
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
                     <div class="pricing-box">
                         <div class="plan-header">                           
                             <div class="image">
-                                <img src="images/packages/package1.jpg">
+                                <img src="/images/packages/package1.jpg">
                             </div>
-                            <h2>Family Steam Ironing Pack</h2>
-                            <div class="price">
+                            <h2 id="name">Family Steam Ironing Pack</h2>
+                            <div class="price" id="price">
                                 <sup class="currency">BDT</sup><span>640</span><sup class="period">/ Monthly</sup>
                             </div>                                                  
                         </div>
@@ -649,7 +649,7 @@
                                 <li>Reguler Price <strong>BDT 800</strong></li>
                                 <li>Package Price <strong> BDT 640</strong> </li>
                                 <li>You save <strong> BDT 160</strong> </li>
-                                <li><strong>30 Day</strong> Duration</li>
+                                <li id="duration"><strong>30 Day</strong> Duration</li>
                             </ul>
                         </div>
                         <div class="plan-footer">
@@ -661,9 +661,10 @@
                     <div class="pricing-box">
                         <div class="plan-header">                           
                             <div class="image">
-                                <img src="images/packages/package2.jpg">
+                                <img src="/images/packages/package2.jpg">
                             </div>
-                            <h2>Couple Steam Ironing pack</h2>
+                            
+                            <h2 >Couple Steam Ironing pack</h2>
                             <div class="price">
                                 <sup class="currency">BDT</sup><span>400</span><sup class="period">/ Monthly</sup>
                             </div>                                                  
@@ -686,7 +687,7 @@
                     <div class="pricing-box">
                         <div class="plan-header">                           
                             <div class="image">
-                                <img src="images/packages/package3.jpg">
+                                <img src="/images/packages/package3.jpg">
                             </div>
                             <h2>Single Steam Ironing Pack</h2>
                             <div class="price">
@@ -713,7 +714,7 @@
                     <div class="pricing-box">
                         <div class="plan-header">                           
                             <div class="image">
-                                <img src="images/packages/package4.jpg">
+                                <img src="/images/packages/package4.jpg">
                             </div>
                             <h2>Single Washing Pack</h2>
                             <div class="price">
@@ -738,7 +739,7 @@
                     <div class="pricing-box">
                         <div class="plan-header">                           
                             <div class="image">
-                                <img src="images/packages/package5.jpg">
+                                <img src="/images/packages/package5.jpg">
                             </div>
                             <h2>Couple Washing Pack</h2>
                             <div class="price">
@@ -763,7 +764,7 @@
                     <div class="pricing-box">
                         <div class="plan-header">                           
                             <div class="image">
-                                <img src="images/packages/package6.jpg">
+                                <img src="/images/packages/package6.jpg">
                             </div>
                             <h2>Family Washing Pack</h2>
                             <div class="price">
@@ -827,68 +828,72 @@
                     
                     <div id="order-message"></div>
                 
-                    <form class="form-horizontal ajax-form" method="post" action="">
-                        <div class="form-group">
-                            <label for="CustName" class="col-sm-3 control-label">Name * </label>
-                            <div class="col-sm-6">
-                                <span class="help-block">Hasan md. imran</span>
+                    <div class="form-horizontal ajax-form">
+                        <div class="form-group" >
+                            <label for="CustName" class="col-sm-3 control-label"  >Name * </label>
+                           <div class="col-sm-6">
+                                <input type="text" class="form-control" id="CustName" name="name" placeholder="Name">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="CustEmail" class="col-sm-3 control-label">Email</label>
+                        <div class="form-group" >
+                            <label for="CustEmail" class="col-sm-3 control-label"  >Email</label>
                             <div class="col-sm-6">
-                                <span class="help-block">imranhasancs@gmail.com</span>
+                                <input type="email" class="form-control" id="CustEmail"  placeholder="Email">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="CustContactNo" class="col-sm-3 control-label">Contact No * </label>
+                        <div class="form-group" id="contactno">
+                            <label for="CustContactNo" class="col-sm-3 control-label" >Contact No * </label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="CustContactNo" name="CustContactNo" placeholder="Contact No" value="01973889873">
+                                <input type="tel" class="form-control" id="CustContactNo" name="CustContactNo" placeholder="Contact No" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="CustAddress" class="col-sm-3 control-label">Address * </label>
                             <div class="col-sm-6">
-                                <textarea class="form-control" name="CustAddress" id="CustAddress" placeholder="Address">block-B</textarea>
+                                <textarea class="form-control" name="CustAddress" id="CustAddress" placeholder="Address"></textarea>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label for="ZoneId" class="col-sm-3 control-label">Area * </label>
                             <div class="col-sm-6">
                                 <select class="form-control" name="ZoneId" id="ZoneId">
                                     <option value="">Select Area</option>
-                                    <option value="2">Gulshan</option><option value="3">Banani</option><option value="4">Uttara</option><option value="6">Bashundhara</option><option value="7">Baridhara</option><option value="8">Khilkhet/Nikunjo</option>                                   
+                                    <option value="Gulshan">Gulshan</option><option value="Banani">Banani</option><option value="Uttara">Uttara</option>
+                                    <option value="Bashundhara">Bashundhara</option><option value="Baridhara">Baridhara</option><option value="Khilkhet/Nikunjo">Khilkhet/Nikunjo</option>                                   
                                 </select>
                             </div>
                         </div>      
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label for="PickupDate" class="col-sm-3 control-label">Pickup Date * </label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="PickupDate" name="PickupDate" data-date-format="dd/mm/yyyy" placeholder="DD/MM/YYYY">
+                                <input type="date" class="form-control" id="PickupDate" name="PickupDate" data-date-format="dd/mm/yyyy" placeholder="DD/MM/YYYY">
                             </div>
                         </div>  
-                        <div class="form-group">
+                        <div class="form-group" >
                             <label for="PickupTime" class="col-sm-3 control-label">Pickup Time * </label>
                             <div class="col-sm-6">
-                                <select class="form-control" name="PickupTime" id="PickupTime">
-                                    <option value="">Select Pickup Time</option>
-                                    <option value="08.00 AM">08.00 AM</option>
-                                    <option value="09.00 AM">09.00 AM</option>
-                                    <option value="10.00 AM">10.00 AM</option>
-                                    <option value="11.00 AM">11.00 AM</option>
-                                    <option value="12.00 AM">12.00 AM</option>
-                                    <option value="01.00 PM">01.00 PM</option>
-                                    <option value="02.00 PM">02.00 PM</option>
-                                    <option value="03.00 PM">03.00 PM</option>
-                                    <option value="04.00 PM">04.00 PM</option>
-                                    <option value="05.00 PM">05.00 PM</option>
-                                    <option value="06.00 PM">06.00 PM</option>
-                                    <option value="07.00 PM">07.00 PM</option>
-                                    <option value="08.00 PM">08.00 PM</option>
-                                    <option value="09.00 PM">09.00 PM</option>
-                                    <option value="10.00 PM">10.00 PM</option>
-                                </select>
+                                <input type="time" class="form-control" id="PickupTime" name="PickupTime" >
                             </div>
+                            <!--<div class="col-sm-6">-->
+                            <!--    <select class="form-control" name="PickupTime" id="PickupTime">-->
+                            <!--        <option value="">Select Pickup Time</option>-->
+                            <!--        <option value="08.00 AM">08.00 AM</option>-->
+                            <!--        <option value="09.00 AM">09.00 AM</option>-->
+                            <!--        <option value="10.00 AM">10.00 AM</option>-->
+                            <!--        <option value="11.00 AM">11.00 AM</option>-->
+                            <!--        <option value="12.00 AM">12.00 AM</option>-->
+                            <!--        <option value="01.00 PM">01.00 PM</option>-->
+                            <!--        <option value="02.00 PM">02.00 PM</option>-->
+                            <!--        <option value="03.00 PM">03.00 PM</option>-->
+                            <!--        <option value="04.00 PM">04.00 PM</option>-->
+                            <!--        <option value="05.00 PM">05.00 PM</option>-->
+                            <!--        <option value="06.00 PM">06.00 PM</option>-->
+                            <!--        <option value="07.00 PM">07.00 PM</option>-->
+                            <!--        <option value="08.00 PM">08.00 PM</option>-->
+                            <!--        <option value="09.00 PM">09.00 PM</option>-->
+                            <!--        <option value="10.00 PM">10.00 PM</option>-->
+                            <!--    </select>-->
+                            <!--</div>-->
                         </div>                          
                         <div class="form-group">
                             <label for="PickupNotes" class="col-sm-3 control-label">Special Notes</label>
@@ -897,28 +902,19 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="PickupNotes" class="col-sm-3 control-label">Purchase Package</label>
-                            <div class="col-sm-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="PuchasePackage" value="Y"> I Would like to puchase new package.
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                
 
-                        <div class="form-group package-list" style="display:none">
-                            <label for="PackageId" class="col-sm-3 control-label"></label>
+                        <div class="form-group package-list" id="purchagePackage">
+                            <label for="PackageId" class="col-sm-3 control-label">Purchase Package</label>
                             <div class="col-sm-6">
                                 <select class="form-control" name="PackageId" id="PackageId">
                                     <option value="">Select Your Package</option>
-                                    <option value="2">Family Steam Ironing Pack</option>
-                                    <option value="3">Couple Steam Ironing pack</option>
-                                    <option value="4">Single Steam Ironing Pack</option>
-                                    <option value="10">Single Washing Pack</option>
-                                    <option value="11">Couple Washing Pack</option>
-                                    <option value="12">Family Washing Pack</option>
+                                    <option value="0">Family Steam Ironing Pack</option>
+                                    <option value="1">Couple Steam Ironing pack</option>
+                                    <option value="2">Single Steam Ironing Pack</option>
+                                    <option value="3">Single Washing Pack</option>
+                                    <option value="4">Couple Washing Pack</option>
+                                    <option value="5">Family Washing Pack</option>
                                 </select>
                             </div>
                         </div>  
@@ -931,14 +927,14 @@
                         </div>
 
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-10">
+                        <div class="form-group" >
+                            <div class="col-sm-offset-3 col-sm-10" >
                 
-                                <input type=button onClick="location.href='customer.html'" value='Place your order'>
+                                <input type=button id="placeorder" value='Place your order'>
 
                             </div>
                         </div>
-                    </form>
+                    </div>
 
                     
                 </div>
@@ -1194,35 +1190,67 @@
       });
     });
     </script>
+    
     <script>
-        var product = {
+        var order = {
     name: "",
-    description: "",
-    quantity:"",
-    price:""
+    email:"",
+    contactno:"",
+    address:"",
+    area:"",
+    pickupDate:"",
+    pickupTime:"",
+    socialNotes: "",
+    purchagePackage:"",
+    
   };
-  $("#name").change(function(event){
-    product.name = $("#name").val();
+  $("#CustName").change(function(event){
+    order.name = $("#CustName").val();
+    console.log(order.name);
   });
-  $("#description").change(function(event){
-    product.description = $("#description").val();
+  $("#CustEmail").change(function(event){
+    order.email = $("#CustEmail").val();
   });
-  $("#price").change(function(event){
-    product.price = $("#price").val();
+  $("#CustAddress").change(function(event){
+    order.address = $("#CustAddress").val();
   });
-  $("#quantity").change(function(event){
-    product.quantity = $("#quantity").val();
+  $("#CustContactNo").change(function(event){
+    order.contactno = $("#CustContactNo").val();
   });
-  $("#submit").click(function(event){
+  $("#ZoneId").click(function(event){
+    order.area = $('#ZoneId :selected').text();
+    console.log(order.area);
+    
+  });
+  $("#PickupDate").change(function(event){
+     var pickupDate = new Date($("#PickupDate").val());
+    order.pickupDate = pickupDate.toISOString();
+    console.log(order.pickupDate);
+  });
+  
+  $("#PickupTime").change(function(event){
+    order.pickupTime = $("#PickupTime").val();
+  });
+  
+  $("#PickupNotes").change(function(event){
+    order.socialNotes = $("#PickupNotes").val();
+  });
+  $("#purchagePackage").click(function(event){
+    order.purchagePackage = packages[$('#purchagePackage :selected').val()];
+    console.log(order.purchagePackage);
+  });
+  
+  $("#placeorder").click(function(event){
+      console.log(JSON.stringify(order));
     $.ajax({
       method: "POST",
-      url: "/api/products",
-      data: product
+      url: "/api/orders",
+      data: order
     })
     .done(function(response){
       console.log("success");
       console.log(response);
-      window.location.replace("/products/"+response._id);
+      window.location.replace("/orders/"+response._id);
     })
     .fail(function(response){
       console.log(response);
@@ -1230,6 +1258,53 @@
       $("#error").text(error.message);
     });;
   });
+    </script>
+    <script>
+        var packages= [{
+            name:"Family Steam Ironing Pack",
+            price:"640",
+            duration:"30",
+            quantity:"80",
+            
+        }, {
+            name:"Couple Steam Ironing pack",
+            price:"400",
+            duration:"30",
+            quantity:"50",
+            
+        },
+       
+        {
+            name:"Single Steam Ironing Pack",
+            price:"240",
+            duration:"30",
+            quantity:"30",
+            
+        },
+        {
+            name:"Single Washing Pack",
+            price:"599",
+            duration:"30",
+            quantity:"15",
+            
+        },
+        {
+            name:"Couple Washing Pack",
+            price:"999",
+            duration:"30",
+            quantity:"25",
+            
+        },
+        {
+            name:"Family Washing Pack",
+            price:"1999",
+            duration:"30",
+            quantity:"50",
+            
+        }];
+    
+  
+  
     </script>
 </body>
 </html>
